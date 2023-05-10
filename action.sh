@@ -86,7 +86,7 @@ git config --global --add safe.directory "${PWD}"
 echo "Building the Hugo site with: 'hugo ${HUGO_ARGS}'"
 hugo "${HUGO_ARGS}"
 
-TARGET_REPO_URL="https://${GITHUB_TOKEN}@git.i.mercedes-benz.com/${TARGET_REPO}.git"
+TARGET_REPO_URL="git@git.i.mercedes-benz.com:${TARGET_REPO}.git"
 
 rm -rf .git
 cd ${HUGO_PUBLISH_DIR}
@@ -105,7 +105,7 @@ if ! git config --get user.name; then
 fi
 
 if ! git config --get user.email; then
-    git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+    git config --global user.email "${GITHUB_ACTOR}@mercedes-benz.com"
 fi
 
 echo "Getting hash for base repository commit"
