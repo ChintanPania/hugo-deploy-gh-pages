@@ -86,7 +86,7 @@ git config --global --add safe.directory "${PWD}"
 echo "Building the Hugo site with: 'hugo ${HUGO_ARGS}'"
 hugo "${HUGO_ARGS}"
 
-TARGET_REPO_URL="git@git.i.mercedes-benz.com:${TARGET_REPO}.git"
+TARGET_REPO_URL="https://${GITHUB_USER}:${GITHUB_TOKEN}@git.i.mercedes-benz.com/${TARGET_REPO}"
 
 rm -rf .git
 cd ${HUGO_PUBLISH_DIR}
